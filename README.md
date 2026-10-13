@@ -21,23 +21,25 @@ CRANE+ V2 を2台、RViz の中に並べて、**マスタースレーブ(リー�
 
 ## 動作環境
 
-* Ubuntu 22.04 + ROS 2 Humble
-* 本家 [rt-net/crane_plus](https://github.com/rt-net/crane_plus) の `humble` ブランチ(アームの形のデータを使います)
+* Ubuntu 24.04 + ROS 2 Jazzy(Ubuntu 22.04 + ROS 2 Humble でも動きます)
+* 本家 [rt-net/crane_plus](https://github.com/rt-net/crane_plus) の `jazzy` ブランチ(アームの形のデータを使います)。Humbleの場合は `humble` ブランチ
 
 ## インストール
 
 ```bash
-source /opt/ros/humble/setup.bash
+source /opt/ros/jazzy/setup.bash
 mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
 git clone https://github.com/ippo100-bit/crane_plus_master_slave_sim.git
-git clone -b humble https://github.com/rt-net/crane_plus.git
+git clone -b jazzy https://github.com/rt-net/crane_plus.git
 cd ~/ros2_ws
 rosdep install -r -y -i --from-paths src
 colcon build --symlink-install
 source install/setup.bash
 ```
 
-`vcstool` を使う場合は、`git clone -b humble ...` の代わりに `vcs import src < src/crane_plus_master_slave_sim/crane_plus.repos` でも取得できます。
+Humbleの場合は、上の `jazzy` 2か所を `humble` に置き換えてください。
+
+`vcstool` を使う場合は、`git clone -b jazzy ...` の代わりに `vcs import src < src/crane_plus_master_slave_sim/crane_plus.repos` でも取得できます。
 
 ## 動かし方
 

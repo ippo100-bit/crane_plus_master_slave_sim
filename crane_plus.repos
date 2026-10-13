@@ -2,4 +2,4 @@ repositories:
   crane_plus:
     type: git
     url: https://github.com/rt-net/crane_plus.git
-    version: humble
+    version: jazzy
