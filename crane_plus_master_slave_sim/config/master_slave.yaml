@@ -1,0 +1,33 @@
+# 左(リーダー)のCRANE+の関節角度を、右(フォロワー)のCRANE+にコピーする設定。
+# KARURAミニアームでは、leader_joints をミニアームの関節名、
+# follower_joints を本物のアームの関節名に置き換える。
+master_slave_bridge:
+  ros__parameters:
+    # 何番の関節を何番に送るか(上から順に対応)
+    leader_joints:
+      - crane_plus_joint1
+      - crane_plus_joint2
+      - crane_plus_joint3
+      - crane_plus_joint4
+      - crane_plus_joint_hand
+    follower_joints:
+      - crane_plus_joint1
+      - crane_plus_joint2
+      - crane_plus_joint3
+      - crane_plus_joint4
+      - crane_plus_joint_hand
+    # 回る向きが逆の関節は true(crane_plus PR #2 の invert_inputs と同じ)
+    invert: [false, false, false, false, false]
+    # ゼロ点のずれ [rad](キャリブレーション値)
+    offset: [0.0, 0.0, 0.0, 0.0, 0.0]
+    # フォロワーの可動範囲 [rad](crane_plus_description の値)
+    lower_limit: [-2.618, -1.8247, -2.5566, -1.8401, -0.709]
+    upper_limit: [2.618, 1.7837, 2.4543, 1.7684, 0.6679]
+    # フォロワーの最高速度 [rad/s]。小さいほどゆっくり追従する
+    max_velocity: 1.5
+    # 更新周期 [Hz]
+    rate: 50.0
+    # リーダーの角度がこの秒数届かなければ、フォロワーはその場で止まる
+    leader_timeout: 0.2
+    # 起動時に追従するか(イネーブルスイッチ)
+    enabled: true
