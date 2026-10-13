@@ -72,7 +72,7 @@ ros2 service call /master_slave_bridge/enable std_srvs/srv/SetBool "{data: true}
 
 ```
 crane_plus_master_slave_sim/
-├── crane_plus.repos                 本家crane_plus(humble)の取得用
+├── crane_plus.repos                 本家crane_plus(jazzy)の取得用
 └── crane_plus_master_slave_sim/     ROS 2パッケージ
     ├── crane_plus_master_slave_sim/
     │   ├── master_slave_bridge.py   リーダー → フォロワーの橋渡しノード
