@@ -27,6 +27,7 @@ CRANE+ V2 を2台、RViz の中に並べて、**マスタースレーブ(リー�
 ## インストール
 
 ```bash
+source /opt/ros/humble/setup.bash
 mkdir -p ~/ros2_ws/src && cd ~/ros2_ws/src
 git clone https://github.com/ippo100-bit/crane_plus_master_slave_sim.git
 git clone -b humble https://github.com/rt-net/crane_plus.git
